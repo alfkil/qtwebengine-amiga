@@ -1,5 +1,6 @@
 [submodule "src/3rdparty"]
     path = src/3rdparty
-    url = ../qtwebengine-chromium.git
+	url = https://github.com/alfkil/qtwebengine-chromium-amiga.git
     ignore = dirty
     initrepo = true
+	branch = 6.2.0

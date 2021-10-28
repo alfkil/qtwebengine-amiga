@@ -37,3 +37,6 @@ moc_*.cpp
 # Compiled QML/JS code
 *.qmlc
 *.jsc
+
+build
+build-amiga

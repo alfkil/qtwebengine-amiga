@@ -58,6 +58,7 @@
 #include <QPointer>
 #include <QScopedPointer>
 #include <QString>
+#include <QHash>
 
 #include <QtWebEngineCore/qwebengineclientcertificatestore.h>
 #include <QtWebEngineCore/qwebenginecookiestore.h>

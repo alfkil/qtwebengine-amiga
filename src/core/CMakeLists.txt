@@ -38,6 +38,9 @@ foreach(arch ${archs})
         # BUILD.gn SETUP
         ##
 
+#set(arch "ppc")
+#set(config "Release")
+
         set(buildGn core_${config}_${arch})
         add_gn_target(${buildGn} ${config} ${arch}
             SOURCES DEFINES CXX_COMPILE_OPTIONS C_COMPILE_OPTIONS INCLUDES MOC_PATH
@@ -492,7 +495,7 @@ endif()
 #  WEBENGINECORE DICT TOOL SETUP
 ##
 
-if(QT_FEATURE_webengine_spellchecker)
+if(QT_FEATURE_webengine_spellchecker AND NOT AMIGA)
     qt_get_tool_target_name(dict_target_name qwebengine_convert_dict)
     target_include_directories(${dict_target_name} PRIVATE
         ../3rdparty/chromium

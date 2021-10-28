@@ -337,7 +337,7 @@ assertTargets(
 )
 add_check_for_support(
    MODULES QtWebEngine QtPdf
-   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR (MACOS AND NOT CMAKE_CROSSCOMPILING)
+   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR (MACOS AND NOT CMAKE_CROSSCOMPILING) OR AMIGA
    MESSAGE "Build can be done only on Linux, Windows or macOS."
 )
 if(LINUX AND CMAKE_CROSSCOMPILING)
@@ -385,7 +385,7 @@ add_check_for_support(
 )
 add_check_for_support(
    MODULES QtWebEngine QtPdf
-   CONDITION NOT LINUX OR TEST_glibc
+   CONDITION NOT LINUX OR TEST_glibc OR AMIGA
    MESSAGE "A suitable version >= 2.17 of glibc is required."
 )
 add_check_for_support(
@@ -433,6 +433,7 @@ add_check_for_support(
    CONDITION
        (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL GNU) OR
        (LINUX AND CMAKE_CXX_COMPILER_ID STREQUAL Clang) OR
+       (AMIGA AND CMAKE_CXX_COMPILER_ID STREQUAL GNU) OR
        (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL MSVC) OR
        (WIN32 AND CMAKE_CXX_COMPILER_ID STREQUAL Clang AND
           CMAKE_CXX_SIMULATE_ID STREQUAL MSVC) OR
